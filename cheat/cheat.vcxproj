@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Build|Win32">
+      <Configuration>Build</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{00E16B23-6123-4FF2-A005-E8E142540C85}</ProjectGuid>
+    <RootNamespace>csgo_cheat</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectName>cheat</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Build|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Build|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Build|Win32'">
+    <OutDir>..\out\</OutDir>
+    <IntDir>tmp\</IntDir>
+    <IncludePath>$(ProjectDir)include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Build|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link />
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <AssemblyDebug>true</AssemblyDebug>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Cheat\FireEventClientSide.cpp" />
+    <ClCompile Include="Cheat\ItemDefinitions.cpp" />
+    <ClCompile Include="Cheat\KitParser.cpp" />
+    <ClCompile Include="Cheat\SequenceProxy.cpp" />
+    <ClCompile Include="Cheat\Skinchanger.cpp" />
+    <ClCompile Include="Cheat\StickerChanger.cpp" />
+    <ClCompile Include="Cheat\TimeWarp.cpp" />
+    <ClCompile Include="Cheat\Visuals.cpp" />
+    <ClCompile Include="Core\CreateMove.cpp" />
+    <ClCompile Include="Core\dllmain.cpp" />
+    <ClCompile Include="Core\DrawModelExecute.cpp" />
+    <ClCompile Include="Core\Font.cpp" />
+    <ClCompile Include="Core\Hooks.cpp" />
+    <ClCompile Include="Core\InputSys.cpp" />
+    <ClCompile Include="Core\options.cpp" />
+    <ClCompile Include="Core\PaintTraverse.cpp" />
+    <ClCompile Include="Core\SDK.cpp" />
+    <ClCompile Include="Core\Utilities.cpp" />
+    <ClCompile Include="Core\vfunc_hook.cpp" />
+    <ClCompile Include="Menu\GUI.cpp" />
+    <ClCompile Include="Menu\Menu.cpp" />
+    <ClCompile Include="SDK\csgostructs.cpp" />
+    <ClCompile Include="SDK\Math\Vector2D.cpp" />
+    <ClCompile Include="SDK\Math\Vector4D.cpp" />
+    <ClCompile Include="SDK\Math\VMatrix.cpp" />
+    <ClCompile Include="SDK\Misc\characterset.cpp" />
+    <ClCompile Include="SDK\Misc\checksum_crc.cpp" />
+    <ClCompile Include="SDK\Misc\checksum_md5.cpp" />
+    <ClCompile Include="SDK\Misc\Color.cpp" />
+    <ClCompile Include="SDK\Misc\Convar.cpp" />
+    <ClCompile Include="SDK\Misc\UtlBuffer.cpp" />
+    <ClCompile Include="SDK\Misc\UtlString.cpp" />
+    <ClCompile Include="SDK\netvars.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cheat\Cheats.h" />
+    <ClInclude Include="Cheat\ItemDefinitions.h" />
+    <ClInclude Include="Cheat\KitParser.h" />
+    <ClInclude Include="Cheat\SequenceProxy.h" />
+    <ClInclude Include="Cheat\Skinchanger.h" />
+    <ClInclude Include="Cheat\TimeWarp.h" />
+    <ClInclude Include="Cheat\Visuals.h" />
+    <ClInclude Include="Core\Draw.h" />
+    <ClInclude Include="Core\Font.h" />
+    <ClInclude Include="Core\Hooks.h" />
+    <ClInclude Include="Core\InputSys.h" />
+    <ClInclude Include="Core\math.h" />
+    <ClInclude Include="Core\options.h" />
+    <ClInclude Include="Core\RecvProxyHook.h" />
+    <ClInclude Include="Core\SDK.h" />
+    <ClInclude Include="Core\singleton.h" />
+    <ClInclude Include="Core\stdafx.h" />
+    <ClInclude Include="Core\Utilities.h" />
+    <ClInclude Include="Core\vfunc_hook.h" />
+    <ClInclude Include="Menu\GUI.h" />
+    <ClInclude Include="Menu\Menu.h" />
+    <ClInclude Include="SDK\csgostructs.h" />
+    <ClInclude Include="SDK\Interfaces\CClientState.h" />
+    <ClInclude Include="SDK\Interfaces\CInput.h" />
+    <ClInclude Include="SDK\Interfaces\IAppSystem.h" />
+    <ClInclude Include="SDK\Interfaces\IBaseClientDll.h" />
+    <ClInclude Include="SDK\Interfaces\IClientEntity.h" />
+    <ClInclude Include="SDK\Interfaces\IClientEntityList.h" />
+    <ClInclude Include="SDK\Interfaces\IClientMode.h" />
+    <ClInclude Include="SDK\Interfaces\IClientNetworkable.h" />
+    <ClInclude Include="SDK\Interfaces\IClientRenderable.h" />
+    <ClInclude Include="SDK\Interfaces\IClientThinkable.h" />
+    <ClInclude Include="SDK\Interfaces\IClientUnknown.h" />
+    <ClInclude Include="SDK\Interfaces\ICollideable.h" />
+    <ClInclude Include="SDK\Interfaces\IConVar.h" />
+    <ClInclude Include="SDK\Interfaces\ICvar.h" />
+    <ClInclude Include="SDK\Interfaces\IEngineSound.h" />
+    <ClInclude Include="SDK\Interfaces\IEngineTrace.h" />
+    <ClInclude Include="SDK\Interfaces\IGameEventmanager.h" />
+    <ClInclude Include="SDK\Interfaces\ILocalize.h" />
+    <ClInclude Include="SDK\Interfaces\IMaterialSystem.h" />
+    <ClInclude Include="SDK\Interfaces\IMDLCache.h" />
+    <ClInclude Include="SDK\Interfaces\IMoveHelper.h" />
+    <ClInclude Include="SDK\Interfaces\IPanel.h" />
+    <ClInclude Include="SDK\Interfaces\IPhysics.h" />
+    <ClInclude Include="SDK\Interfaces\IPrediction.h" />
+    <ClInclude Include="SDK\Interfaces\IRenderView.h" />
+    <ClInclude Include="SDK\Interfaces\ISurface.h" />
+    <ClInclude Include="SDK\Interfaces\IVDebugOverlay.h" />
+    <ClInclude Include="SDK\Interfaces\IVEngineClient.h" />
+    <ClInclude Include="SDK\Interfaces\IViewRender.h" />
+    <ClInclude Include="SDK\Interfaces\IVModelInfoClient.h" />
+    <ClInclude Include="SDK\Interfaces\IVModelRender.h" />
+    <ClInclude Include="SDK\Math\QAngle.h" />
+    <ClInclude Include="SDK\Math\Vector.h" />
+    <ClInclude Include="SDK\Math\Vector2D.h" />
+    <ClInclude Include="SDK\Math\Vector4D.h" />
+    <ClInclude Include="SDK\Math\VMatrix.h" />
+    <ClInclude Include="SDK\Misc\BaseHandle.h" />
+    <ClInclude Include="SDK\Misc\characterset.h" />
+    <ClInclude Include="SDK\Misc\checksum_crc.h" />
+    <ClInclude Include="SDK\Misc\checksum_md5.h" />
+    <ClInclude Include="SDK\Misc\ClientClass.h" />
+    <ClInclude Include="SDK\Misc\Color.h" />
+    <ClInclude Include="SDK\Misc\Convar.h" />
+    <ClInclude Include="SDK\Misc\CUserCmd.h" />
+    <ClInclude Include="SDK\Misc\EHandle.h" />
+    <ClInclude Include="SDK\Misc\Enums.h" />
+    <ClInclude Include="SDK\Misc\GlobalVars.h" />
+    <ClInclude Include="SDK\Misc\glow_outline_effect.h" />
+    <ClInclude Include="SDK\Misc\IHandleEntity.h" />
+    <ClInclude Include="SDK\Misc\KeyValues.h" />
+    <ClInclude Include="SDK\Misc\platform.h" />
+    <ClInclude Include="SDK\Misc\Recv.h" />
+    <ClInclude Include="SDK\Misc\Studio.h" />
+    <ClInclude Include="SDK\Misc\UtlBuffer.h" />
+    <ClInclude Include="SDK\Misc\UtlMemory.h" />
+    <ClInclude Include="SDK\Misc\UtlString.h" />
+    <ClInclude Include="SDK\Misc\UtlVector.h" />
+    <ClInclude Include="SDK\Misc\vfunc.h" />
+    <ClInclude Include="SDK\netvars.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
